@@ -1,0 +1,43 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/var/www/app/app.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/var/www/app/person/person.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1556384660
+  }
+}

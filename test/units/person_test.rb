@@ -1,5 +1,6 @@
-require 'minitest/autorun'
-require_relative '../person/person'
+require_relative '../test_helper'
+require_relative '../../person/person'
+
 class PersonTest < Minitest::Test
     def test_get_name_of_person
         assert_equal 'person', Person.new('person', 18).name
