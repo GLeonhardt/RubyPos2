@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'json'
 require_relative 'person/person'
-require_relative 'metrics/lienar.rb'
+require_relative 'metrics/linear.rb'
 
 class App < Sinatra::Base
     get '/' do 
@@ -19,10 +19,13 @@ class App < Sinatra::Base
         {age: age, is_major: person.is_major? }.to_json
     end
 
-    get 'metric/linear/:origin_type/:value/:dest_type'
+    get '/metrics/linear/:origin_type/:value/:dest_type' do
         content_type :json
         origin = params[:origin_type]
-        destiny = param[:dest_type]
-        value = param[:value]
-        
+        destiny = params[:dest_type]
+        value = params[:value].to_i
+        linear = LinearMetric.new(value, origin)
+        result = linear.send("to_#{destiny}")
+        {valor: value, origem: origin, resultado:result, destino: destiny}.to_json
+    end  
 end
